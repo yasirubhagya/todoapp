@@ -1,9 +1,10 @@
 const express =require('express');
 const router =express.Router();
 const todoModel = require('./todoModel');
-//localhost:300/api/listtodo/
-router.get('/listtodo',(req,res)=>{
-   
+
+// GET localhost:300/api/todos/
+router.get('/todos',(req,res)=>{
+
     todoModel.find()
     .exec()
     .then(result=>{
@@ -16,8 +17,8 @@ router.get('/listtodo',(req,res)=>{
     })
 })
 
-//localhost:300/api/addtodo/
-router.post('/addtodo',(req,res)=>{
+// POST localhost:300/api/todos/
+router.post('/todos',(req,res)=>{
     let newtodo = new todoModel({
         name:req.body.name,
         type:req.body.type,
@@ -36,14 +37,13 @@ router.post('/addtodo',(req,res)=>{
     })
 })
 
-//localhost:300/api/edittodo/
-router.put('/edittodo',(req,res)=>{
-  
+// PUT localhost:300/api/todos/:id
+router.put('/todos',(req,res)=>{
     res.json("edit todo");
 })
 
-//localhost:300/api/deletettodo/
-router.delete('/deletetodo/:Id',(req,res)=>{
+// DELETE localhost:300/api/todos/:id
+router.delete('/todos/:Id',(req,res)=>{
     todoModel.findByIdAndRemove(req.params.Id)
     .exec()
     .then(result=>{
