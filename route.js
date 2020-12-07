@@ -4,7 +4,6 @@ const todoModel = require('./todoModel');
 
 // GET localhost:300/api/todos/
 router.get('/todos',(req,res)=>{
-
     todoModel.find()
     .exec()
     .then(result=>{
@@ -36,7 +35,7 @@ router.get('/todos/:id',(req,res)=>{
 router.post('/todos',(req,res)=>{
     let newtodo = new todoModel({
         name: req.body.name,
-        type: req.body.type,
+        description: req.body.description,
         completed: req.body.completed
     });
     newtodo.save()
