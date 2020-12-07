@@ -17,12 +17,27 @@ router.get('/todos',(req,res)=>{
     })
 })
 
+// GET localhost:300/api/todos/:id
+router.get('/todos/:id',(req,res)=>{
+    const id = req.params.id;
+    todoModel.findById(id)
+    .exec()
+    .then(result=>{
+        res.status(200).json(result);
+    })
+    .catch(err=>{
+        res.status(500).json({
+            msg:"err"
+        })
+    })
+})
+
 // POST localhost:300/api/todos/
 router.post('/todos',(req,res)=>{
     let newtodo = new todoModel({
-        name:req.body.name,
-        type:req.body.type,
-        ver:req.body.ver
+        name: req.body.name,
+        type: req.body.type,
+        completed: req.body.completed
     });
     newtodo.save()
     .then(result=>{
