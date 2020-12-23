@@ -1,17 +1,17 @@
 const mongoose = require('mongoose');
-const { version } = require('os');
 
 const todoSchema = mongoose.Schema({
-    name:{
-        type:String,
-        required:true
+    name: {
+        type: String,
+        required: true
     },
-    description:{
-        type:String
+    description: {
+        type: String
     },
-    ver:{
-        type:Number
+    completed: {
+        type: Boolean,
+        required: true
     }
 })
 
-module.exports = mongoose.model('todo',todoSchema);
+module.exports = mongoose.model('todo', todoSchema);

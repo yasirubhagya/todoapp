@@ -1,11 +1,38 @@
 # todoapp
-todoApp for hackers session
+A Todo Application developed by Hackers' Club Developers
 
-this is basic rest api written in js.
+This is basic rest api written in js using Node.js, Express, MongoDB, Mongoose.
 
-uses express js
-<br>mongoose js
+## Installation
+1. Ater cloning the repo, run;
+```
+$ npm install
+```
 
-after cloning repo first run npm install
-<br>then run npm start to start the server
-<br>use post man or any api client to test endpoints
+## Usage
+2. Start a MongoDB server instance
+This server uses a localhost mongodb server URI, you can add your own URI to the mongoose connection in `app.js`.
+
+3. Start the server
+```
+$ npm start
+```
+
+4. Start the server in _`dev`_ mode
+```
+$ npm run dev
+```
+
+5. Test or consume API endpoints
+For, this you may use any API Client including Postman, Web Browser Clients, etc.
+
+## Further steps (Optional)
+You can improve the API endpoints with more features as your own and also you can contribute to our repository as well. All the contributions are to be done using GitHub Pull Requests(PRs).
+
+You may develop following features to learn basics:
+
+- [ ] Edit todos
+- [ ] Todo Model changes
+- [ ] User Models
+- [ ] User API Endpoints
+- [ ] User Authentication (Firebase?)
